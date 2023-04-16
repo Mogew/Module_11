@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculation View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Module_11" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculationViewController" customModule="Module_11" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +115,9 @@
                                         <state key="normal" title="Calculate">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="calculationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XyB-0Y-b4E"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -144,26 +147,29 @@
                     </view>
                     <connections>
                         <outlet property="heightLabel" destination="6M1-mj-yWd" id="BM6-ic-D9K"/>
+                        <outlet property="heightSlider" destination="r7V-XO-lv3" id="SGF-1I-LV2"/>
                         <outlet property="weightLabel" destination="e3s-IV-EWu" id="Afb-L9-6ph"/>
+                        <outlet property="weightSlider" destination="tEg-vp-xZ8" id="tk0-1Z-BF3"/>
+                        <segue destination="0fN-6m-rdp" kind="presentation" identifier="goToResult" id="5J2-VN-TIW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="25" y="4"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="Src-uK-68I">
             <objects>
-                <viewController id="0fN-6m-rdp" sceneMemberID="viewController">
+                <viewController id="0fN-6m-rdp" customClass="ResultViewController" customModule="Module_11" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ac-sy-4WD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="result_background" translatesAutoresizingMaskIntoConstraints="NO" id="D7i-Kc-bf7">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="TFF-RX-fbs">
-                                <rect key="frame" x="82.5" y="318.5" width="249.5" height="259"/>
+                                <rect key="frame" x="82.5" y="289.5" width="249.5" height="259"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your result " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="891-Rw-qol">
                                         <rect key="frame" x="0.0" y="0.0" width="249.5" height="63"/>
@@ -186,7 +192,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2G-nC-EqU">
-                                <rect key="frame" x="15" y="797" width="384" height="60"/>
+                                <rect key="frame" x="15" y="753" width="384" height="60"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6z5-sW-PIC"/>
@@ -195,6 +201,9 @@
                                 <color key="tintColor" red="0.38587427140000002" green="0.37681865689999999" blue="0.80349966090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Recalculate"/>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="0fN-6m-rdp" eventType="touchUpInside" id="zXw-Dx-RIx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uec-zs-atq"/>
@@ -206,11 +215,15 @@
                             <constraint firstItem="D7i-Kc-bf7" firstAttribute="top" secondItem="8Ac-sy-4WD" secondAttribute="top" id="Mfd-h5-hsd"/>
                             <constraint firstAttribute="bottom" secondItem="D7i-Kc-bf7" secondAttribute="bottom" id="Nzq-th-yYQ"/>
                             <constraint firstItem="TFF-RX-fbs" firstAttribute="centerY" secondItem="8Ac-sy-4WD" secondAttribute="centerY" id="kYx-B3-yVB"/>
-                            <constraint firstItem="n2G-nC-EqU" firstAttribute="bottom" secondItem="uec-zs-atq" secondAttribute="bottom" constant="-5" id="oBy-pZ-JQL"/>
+                            <constraint firstItem="n2G-nC-EqU" firstAttribute="bottom" secondItem="uec-zs-atq" secondAttribute="bottom" constant="-25" id="oBy-pZ-JQL"/>
                             <constraint firstItem="D7i-Kc-bf7" firstAttribute="leading" secondItem="uec-zs-atq" secondAttribute="leading" id="xi3-hW-bK3"/>
                             <constraint firstItem="uec-zs-atq" firstAttribute="trailing" secondItem="n2G-nC-EqU" secondAttribute="trailing" constant="15" id="z2P-IQ-yXd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="YcX-gp-WXC" id="qiV-bN-CTZ"/>
+                        <outlet property="resultLabel" destination="kbh-kV-drL" id="7ae-ZM-6E1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6b-IE-yNa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
