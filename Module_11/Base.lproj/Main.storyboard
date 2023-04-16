@@ -48,7 +48,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="r7V-XO-lv3">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="r7V-XO-lv3">
                                                 <rect key="frame" x="-2" y="40" width="368" height="31"/>
                                                 <color key="tintColor" red="0.38587427140000002" green="0.37681865689999999" blue="0.61593395470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -86,7 +86,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tEg-vp-xZ8">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="tEg-vp-xZ8">
                                                 <rect key="frame" x="-2" y="40" width="368" height="31"/>
                                                 <color key="tintColor" red="0.38587427140000002" green="0.37681865689999999" blue="0.61593395470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -142,6 +142,10 @@
                             <constraint firstItem="gAe-or-yYD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="xZS-YE-8Dz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heightLabel" destination="6M1-mj-yWd" id="BM6-ic-D9K"/>
+                        <outlet property="weightLabel" destination="e3s-IV-EWu" id="Afb-L9-6ph"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
