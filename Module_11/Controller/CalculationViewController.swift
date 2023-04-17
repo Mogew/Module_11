@@ -1,15 +1,8 @@
-//
-//  ViewController.swift
-//  Module_11
-//
-//  Created by Renat on 15.04.2023.
-//
-
 import UIKit
 
 class CalculationViewController: UIViewController {
     
-    var bmi: Float? = nil
+    var calculationBrain = CalculationModel()
     
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightLabel: UILabel!
@@ -22,25 +15,24 @@ class CalculationViewController: UIViewController {
     }
     
     @IBAction func heightSliderChanged(_ sender: UISlider) {
-        let roundedValue = (sender.value * 100).rounded() / 100
+        let roundedValue = calculationBrain.decreaseDecimalPlaces(value: sender.value, numberOfPlaces: 100)
         heightLabel.text = "\(roundedValue)m"
     }
     
     @IBAction func weightSliderChanged(_ sender: UISlider) {
-        let roundedValue = Int((sender.value).rounded())
+        let roundedValue = calculationBrain.decreaseDecimalPlaces(value: sender.value, numberOfPlaces: 0)
         weightLabel.text = "\(roundedValue)kg"
     }
     
     @IBAction func calculationPressed(_ sender: UIButton) {
-        let bmi = weightSlider.value / (heightSlider.value * heightSlider.value)
-        self.bmi = bmi
+        calculationBrain.calculateBMI(height: heightSlider.value, weight: weightSlider.value)
         self.performSegue(withIdentifier: "goToResult", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult"{
             guard let resultVC = segue.destination as? ResultViewController else {return}
-            resultVC.bmiValue = bmi
+            resultVC.bmiST = calculationBrain
         }
     }
 }

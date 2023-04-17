@@ -14,6 +14,8 @@
 		948ACDF129EB0AFA0033EB9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 948ACDF029EB0AFA0033EB9A /* Assets.xcassets */; };
 		948ACDF429EB0AFA0033EB9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948ACDF229EB0AFA0033EB9A /* LaunchScreen.storyboard */; };
 		948ACE1329EC0BC40033EB9A /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948ACE1229EC0BC40033EB9A /* ResultViewController.swift */; };
+		948ACE1629EC42AA0033EB9A /* CalculationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948ACE1529EC42AA0033EB9A /* CalculationModel.swift */; };
+		948ACE1829EC77190033EB9A /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948ACE1729EC77190033EB9A /* BMI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		948ACDF329EB0AFA0033EB9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		948ACDF529EB0AFA0033EB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		948ACE1229EC0BC40033EB9A /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		948ACE1529EC42AA0033EB9A /* CalculationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationModel.swift; sourceTree = "<group>"; };
+		948ACE1729EC77190033EB9A /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			children = (
 				948ACDE729EB0AF80033EB9A /* AppDelegate.swift */,
 				948ACDE929EB0AF80033EB9A /* SceneDelegate.swift */,
+				948ACE1429EC42870033EB9A /* Model */,
 				948ACE1029EC0B9B0033EB9A /* Controller */,
 				948ACE1129EC0BAB0033EB9A /* View */,
 				948ACDF029EB0AFA0033EB9A /* Assets.xcassets */,
@@ -84,6 +89,15 @@
 				948ACDF229EB0AFA0033EB9A /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		948ACE1429EC42870033EB9A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				948ACE1529EC42AA0033EB9A /* CalculationModel.swift */,
+				948ACE1729EC77190033EB9A /* BMI.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				948ACE1629EC42AA0033EB9A /* CalculationModel.swift in Sources */,
 				948ACDEC29EB0AF80033EB9A /* CalculationViewController.swift in Sources */,
 				948ACDE829EB0AF80033EB9A /* AppDelegate.swift in Sources */,
 				948ACDEA29EB0AF80033EB9A /* SceneDelegate.swift in Sources */,
+				948ACE1829EC77190033EB9A /* BMI.swift in Sources */,
 				948ACE1329EC0BC40033EB9A /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
